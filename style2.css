@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Seção de apresentação*/
+
+#presentation {
+    background-image: url(./images/presentation.jpg) ;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+
+}
+#presentation h1 {
+    display: block;
+    width: fit-content;
+    font-size: 2.5em;
+    font-weight: 600;
+    position: relative;
+    color: transparent ;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(1){
+    animation-delay: 1s;
+}
+#presentation h1:nth-child(2){
+     animation: text_reveal_name .5s ease forwards;
+     animation-delay: 2s;
+}
+#presentation h1:nth-child(3){
+    padding-top: 10px;
+    font-size: 1em;
+    animation-delay: 3s;
+}
+#presentation .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: #db0202;
+    background-color: transparent;
+    border: 2px solid #db0202;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 20px;
+    transition: .8s ease;
+    transition-property: background-color, color;
+}
+#presentation .cta:hover{
+    font-weight: 800;
+    color: antiquewhite;
+    background-color: #db0202;
+}
+
+#presentation::after {
+    content: '';
+    position:absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: -1;
+}
+#presentation h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: #db0202;
+}
+#presentation h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#presentation h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#presentation h1:nth-child(3) span{
+    animation-delay: 1.5s;
+}
+
+/* Menu*/
+
+.fruit{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left,#db0202, antiquewhite);
+    padding-bottom: 5%;
+} 
+h1.title {
+    font-size: 3em;
+    padding-right: 90px;
+}
+#menu menu li a {
+    color: black;
+    text-decoration:none;
+    font-weight: 700;
+    font-size: 2.5em;
+    }
+ #banana_item:hover, #tangerina_item:hover, #abacaxi_item:hover, #kiwi_item:hover{
+    color: #DBD818;
+    }
+
+/* Seção de conteúdo*/
+
+.pages {
+    background-size:cover;
+    background-position: top center;
+    position: relative;
+    padding-bottom: 5%;
+    z-index: 1;  
+}
+
+.text {
+    min-height: 100vh;
+    width: 50%;
+    margin-left: 3em ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header_item {
+    font-size: 2em;
+}
+.text_item {
+    margin-top: 2em;
+    text-align: justify;
+}
+.fonts {
+    margin-top: 50px;
+    font-size: .6em;
+}
+.back_menu {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;    
+}
+.back_menu:hover {
+    color: #db0202;
+}
+#page_abacaxi {
+    background-image: url(./images/Abacaxi/abacaxi_G.jpg) ;
+}
+#page_banana {
+    background-image: url(./images/Banana/banana_G.jpg);
+}
+#page_kiwi {
+    background-image: url(./images/Kiwi/kiwi_G.jpg);
+}
+#page_tangerina {
+    background-image: url(./images/Tangerina/tangerina_G.jpg);
+}
+ 
+
+/*Keyframes*/
+
+@keyframes text_reveal {
+    100% {
+        color: black;
+    }
+}
+@keyframes text_reveal_box {
+    50%{
+        width:100%;
+        left:0;
+    }
+    100%{
+        width: 0%;
+        left: 100%;
+    }
+}
+@keyframes text_reveal_name {
+    100% {
+        color: #db0202;
+    }
+}
+
+/* Responsividade das imagens*/
+
+@media only screen and (max-width: 1050px) {
+    #page_abacaxi {
+        background-image: url(./images/Abacaxi/abacaxi_M.jpg) ;
+    }
+    #page_banana {
+        background-image: url(./images/Banana/banana_M.jpg);
+    }
+    #page_kiwi {
+        background-image: url(./images/Kiwi/kiwi_M.jpg);
+    }
+    #page_tangerina {
+        background-image: url(./images/Tangerina/tangerina_M.jpg);
+    }
+}
+@media only screen and (max-width: 750px) {
+    #page_abacaxi {
+        background-image: url(./images/Abacaxi/abacaxi_P.jpg) ;
+    }
+    #page_banana {
+        background-image: url(./images/Banana/banana_P.jpg);
+    }
+    #page_kiwi {
+        background-image: url(./images/Kiwi/kiwi_P.jpg);
+    }
+    #page_tangerina {
+        background-image: url(./images/Tangerina/tangerina_P.jpg);
+    }
+}

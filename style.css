@@ -224,6 +224,16 @@ h1.title {
     }
 }
 @media only screen and (max-width: 750px) {
+    h1.title {
+        display: none;
+    }
+    .header_item {
+        margin-top: 10%;
+    }
+    .text {
+        width: 75%;
+        text-align: justify;
+    }
     #page_abacaxi {
         background-image: url(./images/Abacaxi/abacaxi_P.jpg) ;
     }
